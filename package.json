@@ -14,7 +14,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "name": "ThePantry",
+  "name": "thepantry",
   "version": "1.0.0",
   "main": "keys.js",
   "devDependencies": {},
