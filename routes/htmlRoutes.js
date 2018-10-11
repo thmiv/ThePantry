@@ -41,18 +41,19 @@ module.exports = function (app) {
   // GAME ROUTES*****************************************************
   // Load index page
   app.get("/", function (req, res) {
-    if (req.user) {
-      return res.redirect("/members");
-    }
-    db.Character.findAll({}).then(function (dbCharacter) {
-      res.render("landing", {
-        msg: "Welcome!",
-        username: dbCharacter.username,
-        stockChoice: dbCharacter.stockChoice,
-        stockPrice: (dbCharacter.totalValue * (1 + parseFloat(dbCharacter.stockPrice))).toFixed(2)
-        // examples: dbExamples
-      });
-    });
+    // if (req.user) {
+    //   return res.redirect("/members");
+    // }
+    // db.Character.findAll({}).then(function (dbCharacter) {
+    //   res.render("landing", {
+    //     msg: "Welcome!",
+    //     username: dbCharacter.username,
+    //     stockChoice: dbCharacter.stockChoice,
+    //     stockPrice: (dbCharacter.totalValue * (1 + parseFloat(dbCharacter.stockPrice))).toFixed(2)
+    //     // examples: dbExamples
+    //   });
+    // });
+    res.render("landing")
   });
 
   // Load index page
