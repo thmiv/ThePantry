@@ -44,15 +44,17 @@ module.exports = function (app) {
     if (req.user) {
       return res.redirect("/index");
     }
-    db.Character.findAll({}).then(function (dbCharacter) {
-      res.render("landing", {
-        msg: "Welcome!",
-        // username: dbCharacter.username,
-        // stockChoice: dbCharacter.stockChoice,
-        // stockPrice: (dbCharacter.totalValue * (1 + parseFloat(dbCharacter.stockPrice))).toFixed(2)
-        // // examples: dbExamples
-      });
-    });
+    // db.Character.findAll({}).then(function (dbCharacter) {
+    //   res.render("landing", {
+    //     msg: "Welcome!",
+    //     // username: dbCharacter.username,
+    //     // stockChoice: dbCharacter.stockChoice,
+    //     // stockPrice: (dbCharacter.totalValue * (1 + parseFloat(dbCharacter.stockPrice))).toFixed(2)
+    //     // // examples: dbExamples
+    //   });
+    // });
+    res.render("landing", {
+          msg: "Welcome!" });
   });
 
   // Load index page
