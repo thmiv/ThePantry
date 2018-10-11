@@ -6,13 +6,21 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^0.18.0",
+=======
+    "bcrypt": "^3.0.1",
+>>>>>>> 058fe0312bd889a7349b90ce56755ccac91de6d8
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "express": "~4.16.0",
+    "express": "^4.16.4",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
+<<<<<<< HEAD
     "mongoose": "^5.3.2",
+=======
+    "jsonwebtoken": "^8.3.0",
+>>>>>>> 058fe0312bd889a7349b90ce56755ccac91de6d8
     "morgan": "~1.9.0"
   }
 }
