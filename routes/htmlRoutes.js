@@ -57,21 +57,6 @@ module.exports = function (app) {
           msg: "Welcome!" });
   });
 
-  // Load index page
-  app.get("/index", function (req, res) {
-    if (!req.user) {
-      return res.redirect("/landing");
-    }
-    db.Character.findAll({}).then(function (dbCharacter) {
-      res.render("index", {
-        msg: "Welcome!",
-        // username: dbCharacter.username,
-        // stockChoice: dbCharacter.stockChoice
-        // // examples: dbExamples
-      });
-    });
-  });
-
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
     res.render("404");
