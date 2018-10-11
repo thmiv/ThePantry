@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body accordion" id="accordionExample">
+          {{!-- <h5 class="card-title">Characters</h5> --}}
+          <h3>Current Characters: </h3>
+          <ul id="character-list" class="list-group">
+            {{#each Characters}}
+            <li data-id="{{Characters.id}}" class="list-group-item">
+              <a class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{{Characters.id}}">{{Characters.text}}</a>
+              <button class="btn btn-danger float-right delete">ｘ</button>
+              <a href="/fight/{{Characters.id}}" id="collapse{{Characters.id}}" class="collapse btn btn-primary float-right"
+                data-parent="#accordionExample" class="btn btn-primary float-right" data-id="{{Characters.id}}">Battle
+                this guy</a>
+            </li>
+            {{/each}}
+          </ul>
+          {{!-- <p>
+            <strong>Description:</strong> {{example.description}}</p> --}}
+          <a href="/index">← Back To Login</a> <a class="navbar-brand" href="/logout" style="float:right"> Logout </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/index.js"></script>
