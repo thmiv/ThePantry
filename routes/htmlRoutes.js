@@ -22,7 +22,8 @@ module.exports = function (app) {
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the landing page
-  app.get("/index", isAuthenticated, function (req, res) {
+  app.get("/index", function (req, res) {
+  // app.get("/index", isAuthenticated, function (req, res) {
 
     // db.Character.findAll({
     //   where: {
@@ -34,7 +35,7 @@ module.exports = function (app) {
     //     stockChoice: dbCharacter.stockChoice
     //   });
     // });
-
+    res.render('index')
   });
 
 
@@ -54,23 +55,24 @@ module.exports = function (app) {
     //   });
     // });
     res.render("landing", {
-          msg: "Welcome!" });
+      msg: "Welcome!"
+    });
   });
 
   // Load index page
-  app.get("/index", function (req, res) {
-    if (!req.user) {
-      return res.redirect("/landing");
-    }
-    db.Character.findAll({}).then(function (dbCharacter) {
-      res.render("index", {
-        msg: "Welcome!",
-        // username: dbCharacter.username,
-        // stockChoice: dbCharacter.stockChoice
-        // // examples: dbExamples
-      });
-    });
-  });
+  // app.get("/index", function (req, res) {
+  //   if (!req.user) {
+  //     return res.redirect("/landing");
+  //   }
+  //   // db.Character.findAll({}).then(function (dbCharacter) {
+  //   res.render("index", {
+  //     msg: "Welcome!",
+  //     // username: dbCharacter.username,
+  //     // stockChoice: dbCharacter.stockChoice
+  //     // // examples: dbExamples
+  //   });
+  //   // });
+  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
