@@ -4,6 +4,12 @@ var bcrypt = require("bcryptjs");
 
 module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
+    id: {
+      type: DataTypes.UUID,
+      primaryKey: true,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false
+    },
     username: {
       type: DataTypes.STRING,
       validate: {
@@ -39,7 +45,7 @@ module.exports = function (sequelize, DataTypes) {
   User.associate = function (models) {
     // Associating User with saved data
     // When an User is deleted, also delete any associated saved data
-    User.hasMany(models.Saveddata, {
+    User.hasOne(models.Saveddata, {
       onDelete: "cascade"
     });
   };
