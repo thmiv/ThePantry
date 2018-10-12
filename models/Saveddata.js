@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
   // makes a basic characters table in game database
-  var Character = sequelize.define("Character", {
+  var Saveddata = sequelize.define("Character", {
     username: {
       type: DataTypes.STRING,
       allowNull: false
@@ -22,13 +22,13 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  Character.associate = function (models) {
-    Character.belongsTo(models.Author, {
+  Saveddata.associate = function (models) {
+    Saveddata.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
     });
   };
 
-  return Character;
+  return Saveddata;
 };
