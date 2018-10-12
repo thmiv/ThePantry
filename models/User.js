@@ -3,13 +3,13 @@
 var bcrypt = require("bcryptjs");
 
 module.exports = function (sequelize, DataTypes) {
-  var Author = sequelize.define("Author", {
+  var User = sequelize.define("Author", {
     username: {
       type: DataTypes.STRING,
       validate: {
         isUnique: function (value, next) {
 
-          Author.find({
+          User.find({
               where: {
                 username: value
               },
@@ -36,23 +36,23 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  Author.associate = function (models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
-    Author.hasMany(models.Character, {
+  User.associate = function (models) {
+    // Associating User with saved data
+    // When an User is deleted, also delete any associated saved data
+    User.hasMany(models.Saveddata, {
       onDelete: "cascade"
     });
   };
 
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
-  Author.prototype.validPassword = function (password) {
+  User.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
   };
   // Hooks are automatic methods that run during various phases of the User Model lifecycle
   // In this case, before a User is created, we will automatically hash their password
-  Author.hook("beforeCreate", function (user) {
+  User.hook("beforeCreate", function (user) {
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });
 
-  return Author;
+  return User;
 };
