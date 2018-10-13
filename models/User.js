@@ -4,38 +4,15 @@ var bcrypt = require("bcryptjs");
 
 module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
-    id: {
-      type: DataTypes.UUID,
-      primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false
-    },
-    username: {
+    email: {
       type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
       validate: {
-        isUnique: function (value, next) {
-
-          User.find({
-              where: {
-                username: value
-              },
-              attributes: ['id']
-            })
-            .done(function (error, user) {
-              if (error)
-                // Some unexpected error occured with the find method.
-                return next(error);
-              if (user)
-                // We found a user with this email address.
-                // Pass the error to the next method.
-                return next('Email address already in use!');
-              // If we got this far, the email address hasn't been used yet.
-              // Call next with no arguments when validation is successful.
-              next();
-            });
-        }
+        isEmail: true
       }
     },
+    // The password cannot be null
     password: {
       type: DataTypes.STRING,
       allowNull: false

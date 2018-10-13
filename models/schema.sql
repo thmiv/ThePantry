@@ -1,11 +1,8 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS thepantry;
+CREATE DATABASE thepantry;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
-
-DROP DATABASE IF EXISTS esy6pv920g78i2ah;
-CREATE DATABASE esy6pv920g78i2ah;
+DROP DATABASE IF EXISTS testpantrydb;
+CREATE DATABASE testpantrydb;
 
 /* Create a table for all your star wars characters */
 -- CREATE TABLE ticker (
