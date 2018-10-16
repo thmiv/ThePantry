@@ -1,0 +1,98 @@
+/* custom CSS */
+html {
+    min-height: 100%;
+}
+
+body {
+    background: linear-gradient(#190026 60%, #FECA00 0%);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-origin: border-box;
+    background-clip: border-box;
+}
+
+#login-btn {
+    background: none;
+    color: white;
+    border: none;
+}
+
+.land-nav {
+    padding: 20px;
+}
+
+.land-hero {
+    margin: 92px;
+}
+
+.land-hiw {
+    margin-top: -46px;
+    margin-bottom: -92px;
+    color: #783678;
+}
+
+.hero-image {
+    max-height: 110px;
+}
+
+.math-image {
+    margin-top: 30px;
+    max-height: 55px;
+}
+
+.wht-box {
+    margin: 92px;
+    background: white;
+    border-radius: 12px;
+}
+
+.land-get {
+    margin: 92px;
+}
+
+.land-get .btn {
+    background: #190026;
+    padding: 10px 80px 10px 80px;
+}
+
+.wht-box .card {
+    margin-top: 20px;
+    background: #ffffff;
+    border: none;
+    padding: 20px;
+}
+
+.image-logo {
+    max-height: 30px;
+}
+
+#land-card-1 {
+    color: #FECA00;
+    border-color: #FECA00;
+}
+
+#land-card-2 {
+    color: #50BF77;
+    border-color: #50BF77;
+}
+
+#land-card-3 {
+    color: #FEB4B4;
+    border-color: #FEB4B4;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 2px;
+}
+
+.wht-box .medium {
+    padding-bottom: 30px;
+}
